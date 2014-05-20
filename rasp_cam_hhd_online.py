@@ -11,7 +11,7 @@ import smtplib import SMTPException
 
 class Config_data:
 	board_name		= None		# board name, I use it for being different from another board
-	language		= 0			# 0 inglese, 1 italiano, 2 etc...
+	language		= 0			# 0 English, 1 Italian, 2 etc...
 	quality         = 10		# from 0 (low) to 100 (high) in image quality
 	# with range_b = 00_0_0_0_0_0 and range_e = 101_99_99_99_99_99 infinity time
 	range_b         = [] 		# begin -multiple intervals - list cannot be inizialized here!
