@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>load demo</title>
+  <style>
+  body {
+    font-size: 12px;
+    font-family: Arial;
+  }
+  </style>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<b>IProtectYou project</b>
+
+<!-- <div id="result"> </div> -->
+<div id="result"></div>
+<div id="board_name">Name:</div>
+<div id="language">Language:</div>
+<div id="quality">Quality:</div>
+<div id="data">Data:</div>
+<div id="interval">Interval:</div>
+<div id="range_b">Range start:</div>
+<div id="range_e">Range end:</div>
+<div id="ext_int_event_a">External interrupt:</div>
+<div id="motion_event">Motion event:</div>
+<div id="amount_of_space">Space available:</div>
+<div id="ip">Ip:</div>
+<div id="network">Network:</div>
+<div id="broadcast">Broadcast:</div>
+<div id="dhcp">Dhcp:</div>
+<div id="email_yes_no">Email:</div>
+<div id="email_to">Email to:</div>
+<div id="email_user">Email user:</div>
+<div id="email_pwd">Email password:</div>
+<div id="email_smtp_name">Smtp name</div>
+<div id="email_smtp_port">Smtp port</div>
+  
+<script type="text/javascript">
+$(document).ready(function(){
+  //$('#result').load('config_v0.txt'); // this line loads the content of the file inside the page
+  
+   function parseData(data){
+        //do something with the data
+		var items = data.split("\n");
+		//alert("data is: " + items); // show a pop-up with all the array elements
+		//document.getElementById('result').innerHTML=items[0];
+		for (j=0; j<items.length; j++) {
+			var subitem = items[j].split("=");
+			if(String(subitem[0])=="board_name "){	//pay attention to white spaces at the end of the board_name			
+				document.getElementById('board_name').innerHTML=subitem[1];	
+			}					
+			if(String(subitem[0])=="language "){				
+				document.getElementById('language').innerHTML=subitem[1];	
+			}			
+			if(String(subitem[0])=="quality "){				
+				document.getElementById('quality').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="data "){				
+				document.getElementById('data').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="interval "){				
+				document.getElementById('interval').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="range_b "){				
+				document.getElementById('range_b').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="range_e "){				
+				document.getElementById('range_e').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="ext_int_event_a "){				
+				document.getElementById('ext_int_event_a').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="motion_event "){				
+				document.getElementById('motion_event').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="amount_of_space "){				
+				document.getElementById('amount_of_space').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="ip "){				
+				document.getElementById('ip').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="network "){				
+				document.getElementById('network').innerHTML=subitem[1];	
+			}			
+			if(String(subitem[0])=="broadcast "){				
+				document.getElementById('broadcast').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="dhcp "){				
+				document.getElementById('dhcp').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="email_yes_no "){				
+				document.getElementById('email_yes_no').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="email_to "){				
+				document.getElementById('email_to').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="email_user "){				
+				document.getElementById('email_user').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="email_pwd "){				
+				document.getElementById('email_pwd').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="email_smtp_name "){				
+				document.getElementById('email_smtp_name').innerHTML=subitem[1];	
+			}
+			if(String(subitem[0])=="email_smtp_port "){				
+				document.getElementById('email_smtp_port').innerHTML=subitem[1];	
+			}
+		}	
+				//document.getElementById('language').innerHTML=subitem[2];	
+				//document.getElementById('broadcast').innerHTML=item[0];	
+				//document.getElementById('dhcp').innerHTML=item[1];
+				//document.getElementById('result').innerHTML=subitem[1];				
+		//	$(document).write('<b>IProtectYou project</b>');
+		
+   }
+
+    $.get("config_v0.txt",parseData);
+});
+</script>
+ 
+</body>
+</html>
